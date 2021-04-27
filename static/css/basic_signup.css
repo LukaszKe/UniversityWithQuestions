@@ -1,0 +1,19 @@
+.button_group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.over_button {
+    
+    display: flex;
+    align-items: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
