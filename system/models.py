@@ -12,3 +12,6 @@ class CustomUser(AbstractUser):
     name = models.CharField(max_length=50)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name',]
+
+class Student(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
