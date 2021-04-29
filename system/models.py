@@ -15,3 +15,25 @@ class CustomUser(AbstractUser):
 
 class Student(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
+    university = models.ForeignKey(University, on_delete=models.PROTECT, null=True)
+
+class University(models.Model):
+
+    class UniversityName(models.TextChoices):
+        POLITECHNIKA_WROCLAW = 'PWR', 'Politechnika Wrocławska'
+        POLITECHNIKA_WARSZAWA = 'PW', 'Politechnika Warszawska'
+        POLITECHNIKA_SZCZECIN = 'ZUT', 'Zachodniopomorski Uniwersytet Technologiczny'
+
+    class City(models.TextChoices):
+        WARSZAWA = 'WAW', 'Warszawa'
+        SZCZECIN = 'SZN', 'Szczecin'
+        WROCLAW = 'WRO', 'Wrocław'
+
+    name = models.CharField(max_length = 50)
+
+    city = models.CharField(max_length = 20)
+
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
