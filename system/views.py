@@ -4,7 +4,9 @@ from django.contrib.auth import login
 
 from django.views.generic import CreateView
 from django.contrib.auth import get_user_model
-from .forms import StudentSignUpForm, CandidateSignUpForm
+from .forms import StudentSignUpForm, CandidateSignUpForm, UniversityCreateForm
+
+from .models import University
 
 
 User = get_user_model()
@@ -39,3 +41,16 @@ class CandidateSignUpView(CreateView):
 
 def signup_start(request):
     return render(request, 'signup_start.html')
+
+class UniversityCreateView(CreateView):
+    model = University
+    form_class = UniversityCreateForm
+    template_name = 'registration/signup_form.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'university'
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        university = form.save()
+        return redirect('home')

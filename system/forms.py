@@ -4,6 +4,7 @@ from system.models import Student
 from django.db import transaction
 from django.forms import ModelForm
 from django import forms
+from system.models import University
 
 User = get_user_model()
 
@@ -24,6 +25,10 @@ class CandidateSignUpForm(CustomUserCreationForm):
         return user
 
 class StudentSignUpForm(CustomUserCreationForm):
+    university = forms.ModelChoiceField(
+        queryset=University.objects.all(),
+        required=True
+    )
 
     class Meta(CustomUserCreationForm.Meta):
         model = User
@@ -34,4 +39,10 @@ class StudentSignUpForm(CustomUserCreationForm):
         user.is_student = True
         user.save()
         student = Student.objects.create(user=user)
+        student.university = self.cleaned_data.get('university')
         return user
+
+class UniversityCreateForm(ModelForm):
+    class Meta:
+        model = University
+        fields = ['name', 'city', 'description']
