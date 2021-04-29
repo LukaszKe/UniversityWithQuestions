@@ -1,0 +1,16 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/signup_start.css' %}">
+    <title>Sign Up</title>
+  </head>
+  <body>
+        <ul>
+            <li id="left-container"><a href="{% url 'candidate_signup' %}">Candidate</a></li>
+            <li id="right-container"><a href="{% url 'student_signup' %}">Student</a></li>
+        </ul> 
+  </body>
+</html>

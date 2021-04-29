@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login
 
+from django.views.generic import CreateView
 from django.contrib.auth import get_user_model
 from .forms import StudentSignUpForm, CandidateSignUpForm
 
@@ -35,3 +36,6 @@ class CandidateSignUpView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('home')
+
+def signup_start(request):
+    return render(request, 'signup_start.html')

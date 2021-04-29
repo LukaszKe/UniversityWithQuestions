@@ -19,9 +19,8 @@ from system import views as system_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('system.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/signup/', system_views.SignUpView, name='signup'),
-    path('accounts/signup/student/', system_views.StudentSignUpView, name='student_signup'),
-    path('accounts/signup/candidate/', system_views.CandidateSignUpView, name='candidate_signup'),
+    path('accounts/signup/', system_views.signup_start, name='signup'),
+    path('accounts/signup/student/', system_views.StudentSignUpView.as_view(), name='student_signup'),
+    path('accounts/signup/candidate/', system_views.CandidateSignUpView.as_view(), name='candidate_signup'),
 ]
