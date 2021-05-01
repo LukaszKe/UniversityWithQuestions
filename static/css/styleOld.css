@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* Styles */
+
+
+
+/*Reset Snippet*/
+@import url("resetOld.css");
+
+/*Layouts Snippet*/
+@import url("layoutsOld.css");
+
+/*Containers Snippet*/
+@import url("containersOld.css");
+
+/*Objects Snippet*/
+@import url("objectsOld.css");
+
+
+
+/*General Settings*/
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	/*Dark white document background*/
+	background-color: #f9f9f9;
+}
+
+.test {
+	/*Test class*/
+	box-sizing: border-box;
+	border: 1px solid;
+	
+	/*Test styling*/
+	background-color: paleturquoise;
+	border-color: palevioletred;
+}

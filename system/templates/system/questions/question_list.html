@@ -1,0 +1,232 @@
+{% extends '_baseOld.html' %}
+{% load static %}
+{% load obj_to_string %}
+{% block content %}
+
+<!--Dashboard Layout-->
+<div class="w-dash">
+
+	
+	<!--Main Content-->
+	<main class="g g-gap-xlg">
+				
+		<!--All Section-->
+		<section class="g g-gap-md">
+			
+			<!--Header-->
+			<header>
+				
+				<h1>All</h1>
+				
+			</header><!--//Header-->
+			
+			<!--Questions Fluid Grid-->
+			<div class="g g-fluid-xlg g-gap-lg">
+				{% for question in questions %}
+				<!--Question-->
+				<article class="box box-lg box-chat">
+				
+					<!--Header-->
+					<header class="x x-lg">
+					
+						<!--Image-->
+						<div class="first img img-lg" style="background-color: darkcyan"></div>
+						
+						<!--Labels-->
+						<div class="body">
+							<h6> Gregory </h6>
+							<p class="t-grey">{{ question.universities|toString }}</p>
+						</div>
+						
+						<!--Tick-->
+						<a class="top btn btn-round btn-trnsp btn-trnsp-green" href="{% url 'answer_question' question.pk %}">
+							<i class="fas fa-check"></i>
+						</a>
+						
+						<!--Cross-->
+						<a class="top last btn btn-round btn-trnsp btn-trnsp-red">
+							<i class="fas fa-times"></i>
+						</a>
+						
+					</header><!--//Header-->
+					
+					<!--Content-->
+					<div class="g g-gap-md">
+						<p>{{ question.text }}</p>
+						
+						<div class="f f-sb">
+							
+							<span class="tag tag-blue">{{ question.get_category_display }}</span>
+						
+							<p class="t-green">{{ question.createdAt }}</p>
+							
+						</div>
+			
+					</div><!--//Content-->
+
+				</article><!--//Quesiton-->
+				{% endfor %}
+				<!--Question-->
+				<article class="box box-lg box-chat">
+				
+					<!--Header-->
+					<header class="x x-lg">
+					
+						<!--Image-->
+						<div class="first img img-lg" style="background-color: orangered"></div>
+						
+						<!--Labels-->
+						<div class="body">
+							<h6>Anastasia</h6>
+							<p class="t-grey">Amsterdam, Netherlands</p>
+						</div>
+						
+						<!--Tick-->
+						<button class="top btn btn-round btn-trnsp btn-trnsp-green">
+							<i class="fas fa-check"></i>
+						</button>
+						
+						<!--Cross-->
+						<button class="top last btn btn-round btn-trnsp btn-trnsp-red">
+							<i class="fas fa-times"></i>
+						</button>
+						
+					</header><!--//Header-->
+					
+					<!--Content-->
+					<div class="g g-gap-md">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quia, impedit consequatur saepe natus sit voluptas recusandae libero nihil quam ipsa nulla tempore, possimus laborum iure pariatur eum repellat dolorem id corporis laboriosam maxime iusto, placeat cumque? In temporibus repellat praesentium fugiat rerum nesciunt officia sint, cumque recusandae doloremque cupiditate vitae exercitationem animi? Labore officia nulla omnis dignissimos dolor ullam, doloremque, maxime recusandae iusto aspernatur, est laboriosam mollitia qui provident, incidunt exercitationem magni quia velit numquam deleniti quibusdam. Architecto, officia.
+						</p>
+						
+						<div class="f f-sb">
+							
+							<span class="tag tag-purple">Staff</span>
+						
+							<p class="t-orange">3h 20 min to answer</p>
+							
+						</div>
+			
+					</div><!--//Content-->
+
+				</article><!--//Quesiton-->
+				
+				<!--Question-->
+				<article class="box box-lg box-chat">
+				
+					<!--Header-->
+					<header class="x x-lg">
+					
+						<!--Image-->
+						<div class="first img img-lg" style="background-color: cornflowerblue"></div>
+						
+						<!--Labels-->
+						<div class="body">
+							<h6>Hans</h6>
+							<p class="t-grey">Berlin, Germany</p>
+						</div>
+						
+						<!--Tick-->
+						<button class="top btn btn-round btn-trnsp btn-trnsp-green">
+							<i class="fas fa-check"></i>
+						</button>
+						
+						<!--Cross-->
+						<button class="top last btn btn-round btn-trnsp btn-trnsp-red">
+							<i class="fas fa-times"></i>
+						</button>
+						
+					</header><!--//Header-->
+					
+					<!--Content-->
+					<div class="g g-gap-md">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quia, impedit consequatur saepe natus sit voluptas recusandae libero nihil quam ipsa nulla tempore, possimus laborum iure pariatur eum repellat dolorem id corporis laboriosam maxime iusto, placeat cumque? In temporibus repellat praesentium fugiat rerum nesciunt officia sint, cumque recusandae doloremque cupiditate vitae exercitationem animi? Labore officia nulla omnis dignissimos dolor ullam, doloremque, maxime recusandae iusto aspernatur, est laboriosam mollitia qui provident, incidunt exercitationem magni quia velit numquam deleniti quibusdam. Architecto, officia.
+						</p>
+						
+						<div class="f f-sb">
+							
+							<span class="tag tag-red">Cirriculum</span>
+						
+							<p class="t-green">10 30 min to answer</p>
+							
+						</div>
+			
+					</div><!--//Content-->
+
+				</article><!--//Quesiton-->
+				
+				<!--Question-->
+				<article class="box box-lg box-chat">
+				
+					<!--Header-->
+					<header class="x x-lg">
+					
+						<!--Image-->
+						<div class="first img img-lg" style="background-color: purple"></div>
+						
+						<!--Labels-->
+						<div class="body">
+							<h6>Julia</h6>
+							<p class="t-grey">Den Haag, Netherlands</p>
+						</div>
+						
+						<!--Tick-->
+						<button class="top btn btn-round btn-trnsp btn-trnsp-green">
+							<i class="fas fa-check"></i>
+						</button>
+						
+						<!--Cross-->
+						<button class="top last btn btn-round btn-trnsp btn-trnsp-red">
+							<i class="fas fa-times"></i>
+						</button>
+						
+					</header><!--//Header-->
+					
+					<!--Content-->
+					<div class="g g-gap-md">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quia, impedit consequatur saepe natus sit voluptas recusandae libero nihil quam ipsa nulla tempore, possimus laborum iure pariatur eum repellat dolorem id corporis laboriosam maxime iusto, placeat cumque? In temporibus repellat praesentium fugiat rerum nesciunt officia sint, cumque recusandae doloremque cupiditate vitae exercitationem animi? Labore officia nulla omnis dignissimos dolor ullam, doloremque, maxime recusandae iusto aspernatur, est laboriosam mollitia qui provident, incidunt exercitationem magni quia velit numquam deleniti quibusdam. Architecto, officia.
+						</p>
+						
+						<div class="f f-sb">
+							
+							<span class="tag tag-orange">University</span>
+						
+							<p class="t-green">11 30 min to answer</p>
+							
+						</div>
+			
+					</div><!--//Content-->
+
+				</article><!--//Quesiton-->
+				
+			
+			</div><!--//Questions Fluid Grid-->
+			
+		</section><!--//All Section-->
+		
+	</main><!--//Main Content-->
+	
+
+	
+</div><!--//Dashboard Layout-->
+	
+	
+<!--JavaScript-->
+	
+<!--Textarea Auto-resize-->
+<script>
+	
+//Textarea auto-resize
+const tx = document.getElementsByTagName('textarea');
+for (let i = 0; i < tx.length; i++) {
+  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+  tx[i].addEventListener("input", OnInput, false);
+}
+
+function OnInput() {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+}	
+	
+</script><!--//Textarea Auto-resize-->
+	
+{% endblock content %}

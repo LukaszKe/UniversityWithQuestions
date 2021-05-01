@@ -13,10 +13,6 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name',]
 
-class Student(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
-    university = models.ForeignKey(University, on_delete=models.PROTECT, null=True)
-
 class University(models.Model):
 
     class UniversityName(models.TextChoices):
@@ -37,3 +33,23 @@ class University(models.Model):
 
     def __str__(self):
         return self.name
+
+class Student(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
+    university = models.ForeignKey(University, on_delete=models.PROTECT, null=True)
+
+class Question(models.Model):
+    class Category(models.TextChoices):
+        REKRUTACJA = 'REK', 'Rekrutacja'
+        INNE = 'INN', 'Inne' 
+
+    askedBy = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, related_name='asked_questions', null=True)
+    text = models.CharField(max_length=100)
+    category = models.CharField(
+        max_length=3,
+        choices=Category.choices,
+        default=Category.REKRUTACJA
+    )
+    createdAt = models.DateTimeField(auto_now_add=True)
+    universities = models.ManyToManyField(University)
+    price = models.FloatField(default=0.4)

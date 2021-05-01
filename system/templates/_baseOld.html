@@ -1,0 +1,136 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	
+<!--Viewport-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<!--Fonts-->
+<link rel="stylesheet" href="https://use.typekit.net/erx4joh.css">
+	
+<!--Icons-->
+<script src="https://kit.fontawesome.com/c9d9f7ab96.js" crossorigin="anonymous"></script>
+	
+<!--Styles-->
+<link rel="stylesheet" href="{% static 'css/styleOld.css' %}">
+	
+<!--Title-->
+<title>YouniFidner</title>
+</head>
+
+<body>
+
+
+<!--Nav-->
+<nav class="n">
+	
+	
+	<!--Nav Header-->
+	<header>
+
+		<a class="a-black a-hover-blue" href="#"><h4>YouniFinder</h4></a>
+
+		<button class="btn btn-round btn-trnsp">
+			<i class="fas fa-bars"></i>
+		</button>
+
+	</header><!--//Nav Header-->
+	
+	
+	<!--Nav Form-->
+	<form action="index.html" method="get">
+
+		<input type="text" name="q" placeholder="Search anything...">
+
+		<button class="btn btn-round btn-trnsp btn-trnsp-blue" type="submit">
+			<i class="fas fa-search"></i>
+		</button>
+
+	</form><!--//Nav Form-->
+	
+	
+	<!--Nav Menu-->
+	<ul>
+		
+		<!--Profile-->
+		<li>
+			<button class="btn btn-grey">
+				Adam
+			</button>
+		</li>
+		
+		<!--Ask-->
+		<li>
+			<button class="btn btn-round btn-grey">
+				<i class="fas fa-plus"></i>
+			</button>
+		</li>
+		
+		<!--Chats-->
+		<li>
+			<button class="btn btn-round btn-grey">
+				<i class="fas fa-comment"></i>
+			</button>
+		</li>
+		
+		<!--Search-->
+		<li>
+			<button class="btn btn-round btn-grey">
+				<i class="fas fa-search"></i>
+			</button>
+		</li>
+		
+		<!--More-->
+		<li>
+			<button class="btn btn-round btn-grey">
+				<i class="fas fa-ellipsis-h"></i>
+			</button>
+		</li>
+		
+	</ul><!--//Menu-->
+	
+	
+</nav><!--//Nav-->
+
+
+<!--Nav Mobile-->
+<nav class="n-mobile">
+	
+	
+	<!--Feed-->
+	<button class="btn btn-round btn-grey">
+		<i class="fas fa-bullhorn"></i>
+	</button>
+	
+	
+	<!--Saved-->
+	<button class="btn btn-round btn-trnsp btn-trnsp-blue">
+		<i class="fas fa-bookmark"></i>
+	</button>
+	
+	
+	<!--Compare-->
+	<button class="btn btn-round btn-trnsp btn-trnsp-blue">
+		<i class="fas fa-divide"></i>
+	</button>
+	
+	
+	<!--Activity-->
+	<button class="btn btn-round btn-trnsp btn-trnsp-blue">
+		<i class="fas fa-project-diagram"></i>
+	</button>
+	
+	
+	<!--Achievements-->
+	<button class="btn btn-round btn-trnsp btn-trnsp-blue">
+		<i class="fas fa-star"></i>
+	</button>
+	
+	
+</nav><!--//Nav Mobile-->
+{% block content %}
+{% endblock content %}
+</body>
+</html>

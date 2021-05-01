@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login
 
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView, ListView
 from django.contrib.auth import get_user_model
-from .forms import StudentSignUpForm, CandidateSignUpForm, UniversityCreateForm
+from .forms import StudentSignUpForm, CandidateSignUpForm, UniversityCreateForm, QuestionCreateForm
 
-from .models import University
+from .models import University, Question
 
 
 User = get_user_model()
@@ -54,3 +54,30 @@ class UniversityCreateView(CreateView):
     def form_valid(self, form):
         university = form.save()
         return redirect('home')
+
+class QuestionCreateView(FormView):
+    template_name = 'registration/signup_form.html'
+    form_class = QuestionCreateForm
+
+    def form_valid(self, form):
+        question = form.save(commit=False)
+        question.owner = self.request.user
+        question.save()
+        text = form.cleaned_data['text']
+        universities = form.cleaned_data['universities']
+
+        university_list = University.objects.filter(pk__in=universities)
+        for university in universities:
+            question.universities.add(university)
+
+        return redirect('questions')
+
+class QuestionListView(ListView):
+    model = Question
+    ordering = ('createdAt', )
+    context_object_name = 'questions'
+    template_name = 'system/questions/question_list.html'
+
+    def get_queryset(self):
+        queryset = Question.objects.all()
+        return queryset

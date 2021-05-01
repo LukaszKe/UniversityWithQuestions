@@ -1,0 +1,541 @@
+@charset "UTF-8";
+/*Containers Snippet*/
+
+
+
+/*Grid*/
+
+/*General*/
+.g {
+	/*Grid*/
+	display: grid;
+}
+
+/*Grid Gaps*/
+.g-gap-xsm {
+	/*0.5em*/
+	grid-gap: 0.5em;
+}
+
+.g-gap-sm {
+	/*0.8em*/
+	grid-gap: 0.8em;
+}
+
+.g-gap-md {
+	/*1.2em*/
+	grid-gap: 1.2em;
+}
+
+.g-gap-lg {
+	/*2em*/
+	grid-gap: 2em;
+}
+
+.g-gap-xlg {
+	/*3em*/
+	grid-gap: 3em;
+}
+
+
+
+/*Fluid Grid*/
+
+/*Sizing*/
+.g-fluid-xsm {
+	/*X small*/
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.g-fluid-sm {
+	/*Small*/
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.g-fluid-md {
+	/*Medium*/
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.g-fluid-lg {
+	/*Large*/
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.g-fluid-xlg {
+	/*Large*/
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+
+
+/*1-Column Grid*/
+
+/*General*/
+.g > header {
+	/*Flexbox*/
+	display: flex;
+	
+	/*Align to edges*/
+	justify-content: space-between;
+	
+	/*Align text*/
+	align-items: baseline;
+}
+
+/*Mobile*/
+@media (max-width: 575px) {
+	.w-3 .g > header {
+		/*Move from window edges for 3 column layout*/
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+
+
+
+/*2-Column Grid*/
+
+/*General*/
+.g-2, .g-2-sm {
+	/*Make 2 columns*/
+	grid-template-columns: repeat(2, 1fr);
+}
+
+/*Mobile*/
+@media (max-width: 575px) {
+	.g-2-sm {
+		/*Break into 1 column*/
+		grid-template-columns: 1fr;
+	}
+}
+
+/*Mobile & Tablets*/
+@media (max-width: 900px) {
+	.g-2 {
+		/*Break into 1 column*/
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+/*3-Column Grid*/
+
+/*General*/
+.g-3 {
+	/*Make 3 columns*/
+	grid-template-columns: repeat(3, 1fr);
+}
+	
+/*Mobile*/
+@media (max-width: 575px) {
+	.g-3 {
+		/*Break into 1 column*/
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+/*4-Column Grid*/
+
+/*Mobile*/
+@media (max-width: 575px) {
+	.g-4 {
+		/*Break into 1 column*/
+		grid-template-columns: 1fr;
+	}
+}
+
+/*Tablets*/
+@media (min-width: 576px) and (max-width: 900px) {
+	.g-4 {
+		/*Break into 2 columns*/
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/*All Desktops*/
+@media (min-width: 901px) {
+	.g-4 {
+		/*4 columns*/
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+
+
+/*Stack*/
+
+/*General*/
+.s > * {
+	/*One item per row*/
+	display: block;
+}
+
+/*Fit*/
+.s-fit > * {
+	/*Fit the width to content*/
+	width: fit-content;
+}
+
+/*Reverse*/
+.s-r > * {
+	/*Align to the right*/
+	margin-right: 0;
+	margin-left: auto;
+}
+
+
+
+/*Flex*/
+
+/*General*/
+.f {
+	/*Flexbox*/
+	display: flex;
+}
+
+/*Wrap*/
+.f-wrap {
+	/*Enable Wrap*/
+	flex-wrap: wrap;
+}
+
+/*Shrink*/
+.f-noshrink {
+	flex-shrink: 0;
+}
+
+/*Gap (not supported by Safari)*/
+.f-gap-sm {
+	gap: 0.8em 0;
+}
+
+.f-gap-md {
+	gap: 1em 0;
+}
+
+.f-gap-lg {
+	gap: 1.2rem 0;
+}
+
+/*Justify Content*/
+.f-end {
+	/*Align to the right*/
+	justify-content: flex-end;
+}
+
+.f-center {
+	/*Center*/
+	justify-content: center;
+}
+
+.f-sa {
+	/*Space around*/
+	justify-content: space-around;
+}
+
+.f-sb {
+	/*Align to edges*/
+	justify-content: space-between;
+}
+
+.f-se {
+	/*Align evenly*/
+	justify-content: space-evenly;
+}
+
+/*Align Items*/
+.f-items-end {
+	/*Align to bottom*/
+	align-items: flex-end;
+}
+
+.f-items-center {
+	/*Center vertically*/
+	align-items: center;
+}
+
+.f-items-sa {
+	/*Space around vertically*/
+	align-items: space-around;
+}
+
+.f-items-sb {
+	/*Align to edges vertically*/
+	align-items: space-between;
+}
+
+.f-items-se {
+	/*Align evenly vertically*/
+	align-items: space-evenly;
+}
+
+/*Align Content*/
+.f-align-end {
+	/*Align to bottom*/
+	align-content: flex-end;
+}
+
+.f-align-center {
+	/*Center vertically*/
+	align-content: center;
+}
+
+.f-align-sa {
+	/*Space around vertically*/
+	align-content: space-around;
+}
+
+.f-align-sb {
+	/*Align to edges vertically*/
+	align-content: space-between;
+}
+
+.f-align-se {
+	/*Align evenly vertically*/
+	align-content: space-evenly;
+}
+
+
+
+/*Margin*/
+
+/*Auto*/
+.m-auto {
+	/*Center*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.m-left {
+	/*Align to the left*/
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.m-right {
+	/*Align to the right*/
+	margin-left: auto;
+	margin-right: 0;
+}
+
+/*Horizontal margin*/
+.m-h-xsm {
+	/*X small horizontal margin*/
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.m-h-sm {
+	/*Small horizontal margin*/
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+}
+
+.m-h-md {
+	/*Medium horizontal margin*/
+	margin-left: 1.2em;
+	margin-right: 1.2em;
+}
+
+.m-h-lg {
+	/*Large horizontal margin*/
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.m-h-xlg {
+	/*X large horizontal margin*/
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+/*Vertical Margin*/
+.m-v-xsm {
+	/*X small vertical margin*/
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.m-v-sm {
+	/*Small vertical margin*/
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+.m-v-md {
+	/*Medium vertical margin*/
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+}
+
+.m-v-lg {
+	/*Large vertical margin*/
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.m-v-xlg {
+	/*X large vertical margin*/
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+/*Margin Top*/
+.m-t-xsm {
+	/*X small top margin*/
+	margin-top: 0.5em;
+}
+
+.m-t-sm {
+	/*Small top margin*/
+	margin-top: 0.8em;
+}
+
+.m-t-md {
+	/*Medium top margin*/
+	margin-top: 1.2em;
+}
+
+.m-t-lg {
+	/*Large top margin*/
+	margin-top: 2em;
+}
+
+.m-t-xlg {
+	/*X large top margin*/
+	margin-top: 3em;
+}
+
+/*Margin Bottom*/
+.m-b-xsm {
+	/*X small bottom margin*/
+	margin-bottom: 0.5em;
+}
+
+.m-b-sm {
+	/*Small bottom margin*/
+	margin-bottom: 0.8em;
+}
+
+.m-b-md {
+	/*Medium bottom margin*/
+	margin-bottom: 1.2em;
+}
+
+.m-b-lg {
+	/*Large bottom margin*/
+	margin-bottom: 2em;
+}
+
+.m-b-xlg {
+	/*X large bottom margin*/
+	margin-bottom: 3em;
+}
+
+/*Margin Left*/
+.m-l-xsm {
+	/*X small left margin*/
+	margin-left: 0.5em;
+}
+
+.m-l-sm {
+	/*Small left margin*/
+	margin-left: 0.8em;
+}
+
+.m-l-md {
+	/*Medium left margin*/
+	margin-left: 1.2em;
+}
+
+.m-l-lg {
+	/*Large bleftmargin*/
+	margin-left: 2em;
+}
+
+.m-l-xlg {
+	/*X large left margin*/
+	margin-left: 3em;
+}
+
+/*Margin Right*/
+.m-r-xsm {
+	/*X small right margin*/
+	margin-right: 0.5em;
+}
+
+.m-r-sm {
+	/*Small right margin*/
+	margin-right: 0.8em;
+}
+
+.m-r-md {
+	/*Medium right margin*/
+	margin-right: 1.2em;
+}
+
+.m-r-lg {
+	/*Large right margin*/
+	margin-right: 2em;
+}
+
+.m-r-xlg {
+	/*X large right margin*/
+	margin-right: 3em;
+}
+
+
+
+/*Horizontal Ruler*/
+
+/*General*/
+.hr-t {
+	/*Add a line on the top*/
+	border-top: 2px solid #f2f2f2;
+}
+
+/*Sizing*/
+.hr-t-sm {
+	/*Small*/
+	padding-top: 0.8em;
+}
+
+.hr-t-md {
+	/*Medium*/
+	padding-top: 1em;
+}
+.hr-t-lg {
+	/*Large*/
+	padding-top: 1.2em;
+}
+
+
+
+/*Min-Height*/
+
+/*Sizing*/
+.mh-xsm {
+	/*X small*/
+	min-height: 6em;
+}
+
+.mh-sm {
+	/*Small*/
+	min-height: 8em;
+}
+
+.mh-md {
+	/*Medium*/
+	min-height: 12em;
+}
+
+.mh-lg {
+	/*Large*/
+	min-height: 18em;
+}
+
+

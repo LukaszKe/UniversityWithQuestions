@@ -18,6 +18,7 @@ from django.urls import path, include
 from system import views as system_views
 
 urlpatterns = [
+    path('', include('system.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', system_views.signup_start, name='signup'),

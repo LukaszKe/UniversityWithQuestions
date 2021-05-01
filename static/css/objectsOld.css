@@ -1,0 +1,1153 @@
+@charset "UTF-8";
+/*Objects Snippet*/
+
+
+
+
+
+/*---1. Basic---*/
+
+
+/*The X Object*/
+
+/*General*/
+.x {
+	/*Default display*/
+	display: flex;
+	
+	/*Center vertically*/
+	align-items: center;
+}
+
+.x-top {
+	/*Align items to the top*/
+	align-items: flex-start;
+}
+
+.x .top {
+	/*Align single item to the top*/
+	align-self: flex-start;
+}
+
+.x .first {
+	/*Delete left margin for the first item*/
+	margin-left: 0;
+}
+
+.x .last {
+	/*Delete right margin for the last item*/
+	margin-right: 0;
+}
+
+/*Sizing*/
+.x-sm > * {
+	/*0.4em horizontal margin to all direct descendants*/
+	margin: 0 0.4em;
+}
+
+.x-md > * {
+	/*0.5em horizontal margin to all direct descendants*/
+	margin: 0 0.5em;
+}
+
+.x-lg > * {
+	/*0.6em horizontal margin to all direct descendants*/
+	margin: 0 0.6em;
+}
+
+/*Img and Icon*/
+.x .img {	
+	/*Display as a pink circle*/
+	border-radius: 50%;
+	background-color: palevioletred;
+}
+
+.x .img, .x .icon, .x .btn {
+	/*Prevent shrinking*/
+	flex-shrink: 0;
+}
+
+.x .img-sm, .x .icon-lg {
+	/*Small img and large icon*/
+	width: 2em;
+	height: 2em;
+}
+
+.x .img-md {
+	/*Medium img*/
+	width: 2.5em;
+	height: 2.5em;
+}
+
+.x .img-lg {
+	/*Large img*/
+	width: 3em;
+	height: 3em;
+}
+
+.x .icon-sm {
+	/*Small icon*/
+	width: 1em;
+	height: 1em;
+}
+
+.x .icon-md {
+	/*Medium icon*/
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.x .img-main {
+	/*Page*/
+	width: 15em;
+	height: 15em;
+}
+
+@media (max-width: 575px) {
+	.x .img-main {
+		/*Small image for mobile*/
+		width: 5em;
+		height: 5em;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 900px) {
+	.x .img-main {
+		/*Medium image for tablets*/
+		width: 8em;
+		height: 8em;
+	}
+}
+
+/*Body*/
+.x .body {
+	/*Fill the remaining space*/
+	flex: 1;
+}
+
+.x .body > * {
+	/*Add stack property to all direct body descendants*/
+	display: block;
+	width: fit-content;
+}
+
+
+
+/*Box Object*/
+
+/*General*/
+.box {
+	/*Display*/
+	box-sizing: border-box;
+	
+	/*Default styling*/
+	background-color: white;
+	border-radius: 0.3em;
+
+	/*Shadow*/
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.08);
+	
+	/*Transition*/
+	transition: box-shadow 0.1s;
+}
+
+.box:hover {
+	/*Enlarge box shadow*/
+	box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.08);
+}
+
+.box-block {
+	/*Display as block*/
+	display: block;
+}
+
+/*Sizing*/
+.box-sm {
+	/*Small padding*/
+	padding: 0.8em;
+}
+
+.box-sm > header {
+	/*Small bottom margin*/
+	margin-bottom: 0.8em;
+}
+
+.box-md {
+	/*Medium padding*/
+	padding: 1em;
+}
+
+.box-md > header {
+	/*Medium bottom margin*/
+	margin-bottom: 1em;
+}
+
+.box-lg {
+	/*Large padding*/
+	padding: 1.2em;
+}
+
+.box-lg > header {
+	/*Large bottom margin*/
+	margin-bottom: 1.2em;
+}
+
+/*Transparent Box*/
+.box-trnsp {
+	/*Delete default styling*/
+	background-color: transparent;
+}
+
+.box-trnsp, .box-trnsp:hover {
+	/*Delete box shadow for transparent box*/
+	box-shadow: none;
+}
+
+.box-trnsp-hover:hover {
+	/*Add background and shadow on hover*/
+	background-color: white;
+	box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.08);
+}
+
+/*Chat and Ask Boxes*/
+.box-chat, .box-chat-r, .box-ask {
+	/*Chat-shaped rounded corners*/
+	border-radius: 1em;
+}
+
+.box-chat, .box-ask {
+	/*Delete bottom right radius*/
+	border-bottom-right-radius: 0;
+}
+
+.box-chat-r {
+	/*Delete bottom left radius*/
+	border-bottom-left-radius: 0;
+}
+
+.box-ask {
+	/*Add border to the ask box*/
+	border: 3px solid #007dff;
+}
+
+/*Tint Box*/
+.box-tint {
+	/*Translucent text color*/
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.box-tint:hover p {
+	/*Underline paragraphs if present*/
+	text-decoration: underline;
+}
+
+.box-tint-bottom {
+	/*Relative position*/
+	position: relative;
+}
+
+.box-tint-bottom > * {
+	/*Content absolute position*/
+	position: absolute;
+}
+
+.box-tint-sm.box-tint-bottom > * {
+	/*Small*/
+	bottom: 0.8em;
+	margin-right: 0.8em;
+}
+
+.box-tint-md.box-tint-bottom > * {
+	/*Medium*/
+	bottom: 1em;
+	margin-right: 1em;
+}
+
+.box-tint-lg.box-tint-bottom > * {
+	/*Large*/
+	bottom: 1.2em;
+	margin-right: 1.2em;
+}
+
+.box-tint-sm {
+	/*Set height*/
+	min-height: 8em;
+}
+
+.box-tint-md {
+	/*Set height*/
+	min-height: 12em;
+}
+
+.box-tint-lg {
+	/*Set height*/
+	min-height: 18em;
+}
+
+.box-tint:nth-of-type(1) {
+	/*Blue*/
+	background: 
+		linear-gradient(
+		  rgba(40, 107, 197, 0.85), 
+		  rgba(21, 53, 96, 0.85)
+		),
+
+		url("../../img/image.png");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(2) {
+	/*Red*/
+	background: 
+		linear-gradient(
+		  rgba(173, 52, 72, 0.85), 
+		  rgba(80, 24, 33, 0.85)
+		),
+
+		url("../../img/image2.jpg");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(3) {
+	/*Purple*/
+	background: 
+		linear-gradient(
+		  rgba(108, 52, 173, 0.85), 
+		  rgba(50, 24, 80, 0.85)
+		),
+
+		url(../../img/image3.jpg);
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(4) {
+	/*Green*/
+	background: 
+		linear-gradient(
+		  rgba(113, 163, 45, 0.89), 
+		  rgba(43, 80, 24, 0.89)
+		),
+
+		url("../../img/image.png");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(5) {
+	/*Green*/
+	background: 
+		linear-gradient(
+		  rgba(196, 127, 12, 0.85), 
+		  rgba(122, 77, 20, 0.85)
+		),
+
+		url("../../img/image.png");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(6) {
+	/*Green*/
+	background: 
+		linear-gradient(
+		  rgba(6, 149, 164, 0.85), 
+		  rgba(5, 96, 44, 0.85)
+		),
+
+		url("../../img/image3.jpg");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(7) {
+	/*Green*/
+	background: 
+		linear-gradient(
+		  rgba(138, 10, 87, 0.85), 
+		  rgba(82, 5, 75, 0.85)
+		),
+
+		url("../../img/image2.jpg");
+	
+	background-size: cover;
+}
+
+.box-tint:nth-of-type(8) {
+	/*Green*/
+	background: 
+		linear-gradient(
+		  rgba(184, 80, 12, 0.85), 
+		  rgba(84, 43, 4, 0.85)
+		),
+
+		url("../../img/image3.jpg");
+	
+	background-size: cover;
+}
+
+
+
+/*Ask Box Object*/
+
+/*General*/
+.box-ask + article {
+	/*Hide the mobile ask box*/
+	display: none;
+}
+
+/*Question Box*/
+.box-ask textarea {
+	/*Set width*/
+	width: 98.5%;
+	
+	/*Set min height*/
+	min-height: 50px;
+	
+	/*Add bottom margin*/
+	margin-bottom: 0.8em;
+	
+	/*Styling*/
+	font-size: 1.2em;
+	outline: none;
+	border: none;
+	resize: none;
+}
+
+/*Tags*/
+.box-ask > .tags {
+	/*Add small bottom margin*/
+	margin-bottom: 0.4em;
+}
+
+/*Options*/
+.box-ask .options {
+	/*Flexbox*/
+	display: flex;
+	justify-content: space-between;
+}
+
+.box-ask .options > div:nth-child(2) {
+	/*Flexbox*/
+	display: flex;
+	align-items: flex-end;
+	
+	/*Prevent shrinking*/
+	flex-shrink: 0;
+}
+
+/*Select*/
+.box-ask .options select {
+	/*Add small top margin*/
+	margin-top: 0.4em;
+	
+	/*Add right margin*/
+	margin-right: 0.2em;
+}
+
+/*Buttons*/
+.box-ask .options .btn:first-of-type {
+	/*Add margins to the first button*/
+	margin: 0 1em 0 0.8em;
+}
+
+/*Mobile & Tablets*/
+@media (max-width: 900px) {
+	.box-ask {
+		/*Hide*/
+		display: none;
+	}
+}
+
+/*Mobile & Tablets*/
+@media (max-width: 900px) {
+	.box-ask + article {
+		/*Show the mobile ask box*/
+		display: flex;
+	}
+}
+
+
+
+/*Chat Object*/
+.chat-box {
+	position: relative;
+}
+
+.chat-dot {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	width: 12px;
+	height: 12px;
+	border-radius: 999em;
+	background-color: #f22d50;
+	box-shadow: 0 0 0.15em rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/*---2. Inputs---*/
+
+
+
+/*Button Object*/
+
+/*General*/
+.btn {
+	/*Sizing*/
+	height: 2.5em;
+	padding: 0 1.2em;
+	box-sizing: border-box;
+	
+	/*Prevent buttons from shrinking*/
+	flex-shrink: 0;
+	
+	/*Font properties*/
+	font-weight: 600;
+	font-size: 1em;
+	
+	/*Styling*/
+	border: 3px solid;
+	border-radius: 999em;
+	outline: none;
+	
+	/*Transition*/
+	transition: color 0.1s, background-color 0.1s, border-color 0.1s;
+}
+
+.btn:hover {
+	/*Pointer on hover*/
+	cursor: pointer;
+}
+
+/*Solid Button Object*/
+.btn-black, .btn-blue, .btn-red, .btn-orange {
+	/*White text*/
+	color: white;
+}
+
+.btn-black:hover {
+	/*Black on hover*/
+	background-color: black;
+	border-color: black; 
+}
+
+.btn-black, .btn-black:active {
+	/*Blackish*/
+	background-color: #292929;
+	border-color: #292929;
+}
+
+.btn-grey:hover {
+	/*Grey button on hover*/
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
+	color: black;
+}
+
+.btn-grey, .btn-grey:active {
+	/*Grey*/
+	background-color: #f2f2f2;
+	border-color: #f2f2f2;
+	color: #4d4d4d;
+}
+
+.btn-blue:hover {
+	/*Blue button on hover*/
+	background-color: #006bcc;
+	border-color: #006bcc;
+}
+
+.btn-blue, .btn-blue:active {
+	/*Blue button*/
+	background-color: #007dff;
+	border-color: #007dff;
+}
+
+.btn-red:hover {
+	/*Red button on hover*/
+	background-color: #bc2445;
+	border-color: #bc2445;
+}
+
+.btn-red, .btn-red:active {
+	/*Red button*/
+	background-color: #f22d50;
+	border-color: #f22d50;
+}
+
+.btn-orange:hover {
+	/*Orange button on hover*/
+	background-color: #cc7400;
+	border-color: #cc7400;
+}
+
+.btn-orange, .btn-orange:active {
+	/*Orange button*/
+	background-color: #ff9700;
+	border-color: #ff9700;
+}
+
+/*Round Button Object*/
+.btn-round {
+	/*Rounding the btn*/
+	width: 2.5em;
+	padding: 0;
+}
+
+/*Transparent and Border Buttons Objects*/
+.btn-trnsp, .btn-border {
+	/*Transparent background*/
+	background-color: transparent;
+}
+
+.btn-trnsp {
+	/*Transparent border*/
+	border-color: transparent;
+	
+	/*Light grey color*/
+	color: #999999;
+}
+
+.btn-trnsp:hover {
+	/*Transparent button on hover*/
+	background-color: #f2f2f2;
+	border-color: #f2f2f2;
+	color: #4d4d4d;
+}
+
+.btn-trnsp:active {
+	/*Transparent button active*/
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
+	color: black;
+}
+.btn-trnsp-blue:hover, .btn-border-blue {
+	/*Transparent and border blue*/
+	color: #007dff;
+}
+
+.btn-trnsp-blue:active {
+	/*Transparent blue*/
+	color: #006bcc;
+}
+
+.btn-trnsp-red:hover, .btn-border-red {
+	/*Transparent and border red*/
+	color: #f22d50;
+}
+
+.btn-trnsp-red:active {
+	/*Transparent red*/
+	color: #bc2445;
+}
+
+.btn-trnsp-orange:hover, .btn-border-orange {
+	/*Transparent and border orange*/
+	color: #EF8D00;
+}
+
+.btn-trnsp-orange:active {
+	/*Transparent orange*/
+	color: #B46701;
+}
+
+.btn-trnsp-green:hover, .btn-border-green {
+	/*Transparent and border green*/
+	color: #30cc00;
+}
+
+.btn-trnsp-green:active {
+	/*Transparent green*/
+	color: #249900;
+}
+
+/*Border Button Object*/
+.btn-border-black:hover, .btn-border-blue:hover, .btn-border-red:hover, 
+.btn-border-orange:hover, .btn-border-green:hover {
+	/*White text*/
+	color: white;
+}
+
+.btn-border-black {
+	/*Border black*/
+	color: #292929;
+	border-color: #292929;
+}
+
+.btn-border-black:hover {
+	/*Border black hover*/
+	background-color: #292929; 
+}
+
+.btn-border-black:active {
+	/*Border black active*/
+	background-color: black;
+	border-color: black;
+}
+
+.btn-border-blue {
+	/*Border blue*/
+	border-color: #007dff;
+}
+
+.btn-border-blue:hover {
+	/*Border blue hover*/
+	background-color: #007dff;
+}
+
+.btn-border-blue:active {
+	/*Border blue active*/
+	background-color: #006bcc;
+	border-color: #006bcc;
+}
+
+.btn-border-red {
+	/*Border red*/
+	border-color: #f22d50;
+}
+
+.btn-border-red:hover {
+	/*Border red hover*/
+	background-color: #f22d50;
+}
+
+.btn-border-red:active {
+	/*Border red active*/
+	background-color: #bc2445;
+	border-color: #bc2445;
+}
+
+.btn-border-orange {
+	/*Border orange*/
+	border-color: #ff9700;
+}
+
+.btn-border-orange:hover {
+	/*Border orange hover*/
+	background-color: #ff9700;
+}
+
+.btn-border-orange:active {
+	/*Border orange active*/
+	background-color: #cc7400;
+	border-color: #cc7400;
+}
+
+.btn-border-green {
+	/*Border green*/
+	border-color: #30cc00;
+}
+
+.btn-border-green:hover {
+	/*Border green hover*/
+	background-color: #30cc00;
+}
+
+.btn-border-green:active {
+	/*Border green active*/
+	background-color: #249900;
+	border-color: #249900;
+}
+
+/*White and Transparetn White Button Objects*/
+.btn-white:hover {
+	/*White on hover*/
+	color: black;
+	background-color: #f2f2f2;
+	border-color: #f2f2f2;
+}
+
+.btn-white, .btn-white:active {
+	/*White*/
+	color: #292929;
+	background-color: white;
+	border-color: white;
+}
+
+.btn-white-blue:active {
+	/*BLue active*/
+	color: #006bcc;
+}
+
+.btn-trnsp-white {
+	/*White*/
+	color: white;
+}
+
+.btn-trnsp-white:hover {
+	/*Styling on hover*/
+	background-color: white;
+	border-color: white;
+	color: #292929;
+}
+
+.btn-trnsp-white:active {
+	/*Styling on active*/
+	background-color: #f2f2f2;
+	border-color: #f2f2f2;
+	color: black;
+}
+
+.btn-white-blue, 
+.btn-trnsp-white-blue:hover {
+	/*Blue on hover*/
+	color: #007dff;
+}
+
+.btn-white-blue:hover,
+.btn-trnsp-white-blue:active {
+	/*Blue active*/
+	color: #006bcc;
+}
+
+.btn-white-blue:active {
+	/*Blue active*/
+	color: #007dff;
+}
+
+.btn-white-red, 
+.btn-trnsp-white-red:hover {
+	/*Red on hover*/
+	color: #f22d50;
+}
+
+.btn-white-red:hover, 
+.btn-trnsp-white-red:active {
+	/*Red active*/
+	color: #bc2445;
+}
+
+.btn-white-red:active {
+	/*Red active*/
+	color: #f22d50;
+}
+
+.btn-white-orange, 
+.btn-trnsp-white-orange:hover {
+	/*Orange on hover*/
+	color: #ff9700;
+}
+
+.btn-white-orange:hover, 
+.btn-trnsp-white-orange:active {
+	/*Orange active*/
+	color: #cc7400;
+}
+
+.btn-white-orange:active {
+	/*Orange active*/
+	color: #ff9700;
+}
+
+
+
+/*Textbox Object*/
+
+/*General*/
+.i-text {
+	/*Display*/
+	padding: 0.6em;
+	width: 15em;
+	box-sizing: border-box;
+	
+	/*Styling*/
+	font-size: 1em;
+	color: #4d4d4d;
+	border: 2px solid #e0e0e0;
+	border-radius: 0.3em;
+	outline: none;
+	background-color: white;
+	
+	/*Trsnaition*/
+	transition: border-color 0.1s, color 0.1s;
+}
+
+.i-text:hover {
+	/*On hover*/
+	border-color: #bfbfbf;
+}
+
+.i-text:focus {
+	/*Styling on focus*/
+	border-color: #007dff;
+	color: #292929;
+}
+
+.i-text::placeholder {
+	/*Grey placeholder*/
+	color: #bfbfbf;
+}
+
+/*Sizing*/
+.i-text-lg {
+	/*Display*/
+	width: 20em;
+	padding: 0.8em;
+	
+	/*Styling*/
+	font-size: 1.2em;
+	border-width: 3px;
+}
+
+.i-text-full {
+	/*Set to full width*/
+	width: 100%;
+}
+
+
+
+/*Searchbox Object*/
+
+/*General*/
+.search {
+	/*Display*/
+	display: inline-block;
+	position: relative;
+	width: auto;
+}
+
+.search > .btn {
+	/*Position absolutely*/
+	position: absolute;
+}
+
+/*Sizing*/
+.search > .btn {
+	/*Display*/
+	width: 2em;
+	height: 2em;
+	top: 0.35em;
+	right: 0.35em;
+}
+
+.search-lg > .btn {
+	/*Display*/
+	width: 2.5em;
+	height: 2.5em;
+	top: 0.65em;
+	right: 0.65em;
+}
+
+.search-full {
+	/*Set to full width*/
+	width: 100%;
+}
+
+
+
+/*Select Object*/
+
+/*General*/
+select {
+	/*Set height*/
+	height: 2.5em;
+	
+	/*Add padding*/
+	padding: 0 0.2em;
+	
+	/*Border box*/
+	box-sizing: border-box;
+	
+	/*Styling*/
+	font-size: 1em;
+	border: 3px solid #f2f2f2;
+	border-radius: 0.4em;
+	outline: none;
+	
+	/*Transition*/
+	transition: background-color 0.1s;
+}
+
+select:hover {
+	/*Options on hover*/
+	background-color: #f2f2f2;
+	cursor: pointer;
+}
+
+
+
+/*Toggle Object*/
+
+/*General*/
+.toggle {
+	/*Position relatively*/
+	position: relative;
+	
+	/*Display*/
+	display: inline-block;
+	flex-shrink: 0;
+	width: 3em;
+	height: 1.5em;
+}
+
+.toggle input {
+	/*Hide default toggle*/
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/*Switch*/
+.toggle span {
+	/*Position absolutely*/
+	position: absolute;
+	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+	
+	/*Cursor*/
+	cursor: pointer;
+
+	/*Styling*/
+	background-color: #e0e0e0;
+	border-radius: 999rem;
+	
+	/*Transition*/
+	transition: 0.2s;
+}
+
+.toggle input:checked + span {
+	/*On click*/
+	background-color: #007dff;
+	box-shadow: 0 0 0.2em rgba(0, 125, 255, 0.25);
+}
+
+/*Circle*/
+.toggle span:before {
+	/*Position absolutely*/
+	position: absolute;
+	left: 0.19em;
+  	bottom: 0.18em;
+	
+	/*Display*/
+  	content: "";
+  	height: 1.13em;
+  	width: 1.13em;
+	
+	/*Styling*/
+  	background-color: white;
+	border-radius: 999em;
+	
+	/*Transition*/
+	transition: 0.2s;
+}
+
+
+.toggle input:checked + span:before {
+	/*Move the circle on click*/
+	transform: translateX(1.5em);
+}
+
+
+
+/*Checkbox Object*/
+
+/*General*/
+.check {
+	/*Display*/
+	display: block;
+	position: relative;
+	padding-left: 2em;
+	
+	/*Styling*/
+	cursor: pointer;
+	font-size: 1em;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.check input {
+	/*Hide the default checkbox*/
+	position: absolute;
+	opacity: 0;
+	height: 0;
+	width: 0;
+	cursor: pointer;
+}
+
+/*Tick*/
+.check-tick {
+	/*Display*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.25em;
+	width: 1.25em;
+
+	/*Styling*/
+	background-color: #f2f2f2;
+	border-radius: 0.3em;
+	
+	/*Transition*/
+	transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+.check:hover input ~ .check-tick {
+	/*Grey initial background*/
+	background-color: #e0e0e0;
+}
+
+
+.check input:checked ~ .check-tick {
+	/*Add blue background and shadow*/
+	background-color: #007dff;
+	box-shadow: 0 0 0.2em rgba(0, 125, 255, 0.25);
+}
+
+.check-tick:after {
+	/*Tick indicator*/
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.check input:checked ~ .check-tick:after {
+	/*Show the tick*/
+  display: block;
+}
+
+.check .check-tick:after {
+	/*Display*/
+	left: 0.4em;
+	top: 0.1em;
+	width: 5px;
+	height: 0.6em;
+	
+	/*Styling*/
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+
+/*Progress Bar Object*/
+
+/*General*/
+.bar {
+	display: inline-block;
+	width: 100%;
+	height: 0.8em;
+	
+	background-color: #f2f2f2;
+	border-radius: 999em;
+}
+.bar div {
+	width: 75%;
+	height: 0.8em;
+	
+	background-color: #38C70E;
+	border-top-left-radius: 999em;
+	border-bottom-left-radius: 999em;
+}
+
+

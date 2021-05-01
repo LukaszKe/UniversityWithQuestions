@@ -4,7 +4,7 @@ from system.models import Student
 from django.db import transaction
 from django.forms import ModelForm
 from django import forms
-from system.models import University
+from system.models import University, Question
 
 User = get_user_model()
 
@@ -46,3 +46,9 @@ class UniversityCreateForm(ModelForm):
     class Meta:
         model = University
         fields = ['name', 'city', 'description']
+
+class QuestionCreateForm(ModelForm):
+    
+    class Meta:
+        model = Question
+        fields = ['text', 'category', 'universities']
