@@ -135,3 +135,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 # location of static files in production
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+
+LOGIN_URL = 'login'
+
+LOGOUT_URL = 'logout'
+
+#LOGIN_REDIRECT_URL = 'home'
+
+#LOGOUT_REDIRECT_URL = 'home'
